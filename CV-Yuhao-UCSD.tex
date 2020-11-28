@@ -1,4 +1,6 @@
 \documentclass[margin,line]{res}
+\usepackage[all]{nowidow}
+
 
 
 \oddsidemargin -.5in
@@ -24,7 +26,7 @@
    \setlength{\leftmargin}{0.2in}}}{\end{list}}
 
 
-\begin{document}
+\begin{document}\sloppy
 
 \name{Yuhao Zhang \vspace*{.1in}}
 
@@ -72,13 +74,19 @@ Gong-Neng Scholarship, 2013\\
 Poling Academy Scholarship, 2012-2016
 
 \section{\sc Projects}
-{\bf Project Cerebro:}
+{\bf Distributed Deep Learning on Data Systems:}
+
+Deep learning (DL) has achieved massive success lately. The demand for DL is rising, especially among the enterprises who own large business-critical datasets that reside in RDBMSs or other data systems. The DB community has long worked on bringing machine learning (ML) to DBMS-resident data. Given the accumulated experience of in-DBMS ML and recent advances in distributed DL training and model selection, it is now prime time to revisit the problem and ask \textit{how to bring DL support to DB-resident data?} Turns out there is no single ``best'' approach, and an interesting tradeoff space of alternative approaches exists. This project proposes four different approaches, contrasts them analytically using various criteria, e.g., runtime efficiency, ease of governance, and compares them empirically with large-scale DL workloads. Overall, there is a Pareto front worth exploring; for instance, some approaches may be 3x-6x faster but lack in governance and portability.\\
+\textit{Open-sourced release: }\texttt{https://github.com/makemebitter/cerebro-ds}
+
+{\bf Cerebro:}
 
 Cerebro is a layered data platform for scalable deep learning. One of the biggest challenges for scalable deep learning is model selection, which is difficult and resource-heavy. This system provides high-level APIs for deep learning model selection and optimizes distributed deep learning training for model selection workloads. It adopts a new form of parallelism called Model Hopper Parallelism (MOP) and is the resource-optimal choice. It can expedite distributed deep learning training by 3x-10x compared to Horovod and TensorFlow Parameter Server. There are also subsequent works about bridging data systems (such as Apache Spark, Distributed databases, etc.) with distributed DL systems.\\
 \textit{Project homepage: }\texttt{https://adalabucsd.github.io/cerebro.html}\\
 \textit{Open-sourced release: }\texttt{https://adalabucsd.github.io/cerebro-system}
 
-{\bf Project Panorama:}
+\newpage
+{\bf Panorama:}
 
 Panorama is a video querying system for object detection and classification. It is designed to tackle the life-long learning or bounded vocabulary issues. Computer-vision-based video analytics systems often require \textit{update} of the vocabulary as new classes/labels need to be added from time-to-time. Such updates involve re-training of the deep learning model, which requires expertise and is very time-consuming. Panorama is built to partially avoid and automate this process while expediting inference speed at the same time.\\
 \textit{Project homepage: }\texttt{https://adalabucsd.github.io/panorama.html}\\
@@ -127,6 +135,7 @@ Conducted undergraduate research in theoretical physics.
 {\em Software Engineer Intern} \hfill {\bf Summer 2019}\\
 Worked on the first in-DBMS deep learning system, allowing training and inference of deep learning models with TensorFlow on database-resident data. Integrated my research project, Cerebro, into the deep learning training infrastructure of Greenplum Database, boosting efficiency by over 10x. Contributed to the Apache MADlib project in Python and SQL. Lead the development of a major release. This project has been incorporated into Greenplum and production-ready for VMware's customers.
 
+\newpage
 {\bf Opera Solutions}, San Diego, California USA
 
 \vspace{-.3cm}
@@ -134,6 +143,10 @@ Worked on the first in-DBMS deep learning system, allowing training and inferenc
 Worked on a theatre scheduling \& recommender system. Proposed new models and optimized the existing system.
 
 \section{\sc Publications}
+\textit{Distributed Deep Learning on Data Systems: A Comparative Analysis of Approaches}\\
+Yuhao Zhang, Arun Kumar, Frank McQuillan, Nandish Jayaram, Nikhil Kak, Ekta Khanna, Orhan Kislal, and Domino Valdano\\
+Under submission
+
 \textit{Cerebro: A Layered Data Platform for Scalable Deep Learning}\\
 Arun Kumar, Supun Nakandala, Yuhao Zhang, Side Li, Advitya Gemawat, and Kabir Nagrecha\\
 CIDR 2021 (To appear)
@@ -146,7 +159,6 @@ VLDB 2020
 Yuhao Zhang and Arun Kumar\\
 VLDB 2020
 
-\newpage
 \textit{Cerebro: Efficient and Reproducible Model Selection on Deep Learning Systems}\\
 Supun Nakandala, Yuhao Zhang, and Arun Kumar\\
 ACM SIGMOD 2019 DEEM Workshop
