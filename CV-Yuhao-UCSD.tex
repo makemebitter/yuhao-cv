@@ -1,0 +1,243 @@
+\documentclass[margin,line]{res}
+\usepackage[all]{nowidow}
+
+
+
+\oddsidemargin -.5in
+\evensidemargin -.5in
+\textwidth=6.0in
+\itemsep=0in
+\parsep=0in
+% if using pdflatex:
+%\setlength{\pdfpagewidth}{\paperwidth}
+%\setlength{\pdfpageheight}{\paperheight} 
+
+\newenvironment{list1}{
+ \begin{list}{\ding{113}}{%
+   \setlength{\itemsep}{0in}
+   \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+   \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
+   \setlength{\leftmargin}{0.17in}}}{\end{list}}
+\newenvironment{list2}{
+ \begin{list}{$\bullet$}{%
+   \setlength{\itemsep}{0in}
+   \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+   \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
+   \setlength{\leftmargin}{0.2in}}}{\end{list}}
+
+
+\begin{document}\sloppy
+
+\name{Yuhao Zhang \vspace*{.1in}}
+
+\begin{resume}
+\section{\sc Contact Information}
+\vspace{.05in}
+\begin{tabular}{@{}p{2in}p{4in}}
+EBU3B 3230       &  \\       
+CSE Department  & {\it E-mail:} yuz870@eng.ucsd.edu\\
+UC San Diego & {\it Web:} https://yhzhang.info/ \\    
+La Jolla, CA 92093 USA & \\   
+\end{tabular}
+
+\section{\sc Education}
+{\bf University of California, San Diego}, La Jolla, California USA\\
+%{\em Department of Statistics} 
+\vspace*{-.1in}
+\begin{list1}
+\item[] Ph.D. Student, Computer Science, September 2017 - December 2022 (anticipated)
+\begin{list2}
+\vspace*{.05in}
+%\item Dissertation Topic: ``Hierarchical Models for Multiple Ratings
+% in Performance-Based\\ \hspace*{1.23in} Student Assessments.'' 
+\item Advisor: Prof. Arun Kumar
+\end{list2}
+\end{list1}
+
+{\bf Nankai University}, Tianjin, China\\
+\vspace*{-.1in}
+\begin{list1}
+\item[] B.S., Theoretical Physics, June 2016
+\begin{list2}
+\item Advisor: Prof. Xueqian Li and Yangang Miao
+\end{list2}
+\end{list1}
+
+
+\section{\sc Research Interests}
+Machine learning systems, including systems powered by applied ML that enable novel applications, and systems designed for ML to make data science easier and faster
+
+\section{\sc Honors and Awards} 
+Best Thesis Award, School of Physics, Nankai University, 2016\\
+Wang Kechang Scholarship for Academic Distinction, 2014\\
+Gong-Neng Scholarship, 2013\\
+Poling Academy Scholarship, 2012-2016
+
+\section{\sc Projects}
+{\bf Distributed Deep Learning on Data Systems:}
+
+Deep learning (DL) is growing in popularity for many data analytics applications, including among enterprises. Large business-critical datasets in such settings typically reside in RDBMSs or other data systems. The DB community has long aimed to bring machine learning (ML) to DBMS-resident data. Given past lessons from in-DBMS ML and recent advances in scalable DL systems, DBMS and cloud vendors are increasingly interested in adding more DL support for DB-resident data. In this paper, we show that there is no single ``best'' approach to achieve that goal and an interesting tradeoff space of approaches exists. We explain four canonical approaches, compare them analytically on multiple criteria (e.g., runtime efficiency and ease of governance) and compare them empirically with large-scale DL workloads. Our experiments and analyses show that it is non-trivial to meet all practical desiderata well and there is a Pareto frontier; for instance, some approaches are 3x-6x faster but fare worse on governance and portability. Our results and insights can help DBMS and cloud vendors design better DL support for DB users.\\
+\textit{Open-sourced release: }\texttt{https://github.com/makemebitter/cerebro-ds}
+
+{\bf Cerebro:}
+
+Cerebro is a layered data platform for scalable deep learning. One of the biggest challenges for scalable deep learning is model selection, which is difficult and resource-heavy. This system provides high-level APIs for deep learning model selection and optimizes distributed deep learning training for model selection workloads. It adopts a new form of parallelism called Model Hopper Parallelism (MOP) and is the resource-optimal choice. It can expedite distributed deep learning training by 3x-10x compared to Horovod and TensorFlow Parameter Server. There are also subsequent works about bridging data systems (such as Apache Spark, Distributed databases, etc.) with distributed DL systems.\\
+\textit{Project homepage: }\texttt{https://adalabucsd.github.io/cerebro.html}\\
+\textit{Open-sourced release: }\texttt{https://adalabucsd.github.io/cerebro-system}
+
+\newpage
+{\bf Panorama:}
+
+Panorama is a video querying system for object detection and classification. It is designed to tackle the life-long learning or bounded vocabulary issues. Computer-vision-based video analytics systems often require \textit{update} of the vocabulary as new classes/labels need to be added from time-to-time. Such updates involve re-training of the deep learning model, which requires expertise and is very time-consuming. Panorama is built to partially avoid and automate this process while expediting inference speed at the same time.\\
+\textit{Project homepage: }\texttt{https://adalabucsd.github.io/panorama.html}\\
+\textit{Open-sourced release: }\texttt{https://github.com/makemebitter/Panorama-UCSD}
+
+\section{\sc Research Impact}
+Cerebro and MOP integrated into Greenplum Database and shipped by VMware \hfill 2019\\
+Code of Cerebro integrated into Apache MADlib project \hfill 2019\\
+
+\section{\sc Academic Experience}
+{\bf University of California, San Diego}, La Jolla, California USA
+
+\vspace{-.3cm}
+{\em PhD Student} \hfill {\bf Sept 2017 - present}\\
+Includes current Ph.D.~research, Ph.D.~and Masters level coursework and
+research/consulting projects.\\
+Courses taken: Machine Learning, Data Mining \& Analytics, Advanced Data Analytics, Computer Vision, Database Systems, Advanced Algorithms, Advanced Compilers, Principles of Programming Languages, Introduction to Robotics
+
+{\em Teaching Assistant for CSE234: Data Systems for Machine Learning} \hfill {\bf Winter 2021}\\
+Helped designing and supervising a research-oriented course on machine learning systems. Mentored 12 master students with their course projects ranging from advanced implementation of cutting-edge research, to evaluation and surveying the state-of-art, to open-ended research questions. 
+
+%\vspace{-.1cm}
+{\em Teaching Assistant for DSC102: Systems for Scalable Analytics} \hfill {\bf Winter 2020}\\
+Developed the first edition of course assignments and auto-grading programs with Python and Bash. The assignments involve Python Dask, Spark, AWS EC2/S3/EBS, and Kubernetes. These assignments have been adopted by the course ever since and used by 500+ students.
+
+
+
+{\bf Texas A\&M University}, College Station, Texas USA
+
+\vspace{-.3cm}
+{\em Research Intern} \hfill {\bf Summer 2015}\\
+Worked on vision-based object tracking and data analysis \& modeling.
+%\vspace{-.1cm}
+
+{\bf Institute of Physics, Chinese Academy of Sciences}, Beijing, China
+
+\vspace{-.3cm}
+{\em Research Intern} \hfill {\bf Summer 2014}\\
+Research in theoretical physics.
+
+{\bf Nankai University}, Tianjin, China
+
+\vspace{-.3cm}
+{\em Research Assistant} \hfill {\bf 2013 - 2016}\\
+Research in theoretical physics.
+
+\section{\sc Professional Experience}
+{\bf Microsoft Gray System Lab}, California USA
+
+\vspace{-.3cm}
+{\em Research Intern} \hfill {\bf Summer 2021}\\
+Worked on machine learning system research, focusing factorized in-DBMS machine learning.
+
+
+{\bf VMware}, Palo Alto, California USA
+
+\vspace{-.3cm}
+{\em Software Engineer Intern} \hfill {\bf Summer 2019}\\
+Worked on the first in-DBMS deep learning system, allowing training and inference of deep learning models with TensorFlow on database-resident data. Integrated my research project, Cerebro, into the deep learning training infrastructure of Greenplum Database, boosting efficiency by over 10x. Contributed to the Apache MADlib project in Python and SQL. Lead the development of a major release. This project has been incorporated into Greenplum and production-ready for VMware's customers.
+
+{\bf Opera Solutions}, San Diego, California USA
+
+\vspace{-.3cm}
+{\em Data Scientist Intern} \hfill {\bf Summer 2018}\\
+Worked on a theatre scheduling \& recommender system. Proposed new models and optimized the existing system.
+
+\section{\sc Publications}
+\textit{Some Damaging Delusions of Deep Learning Practice (and How to Avoid Them)}\\
+Arun Kumar, Supun Nakandala, Yuhao Zhang\\
+KDD 2021 Deep Learning Day
+
+\textit{Distributed Deep Learning on Data Systems: A Comparative Analysis of Approaches}\\
+Yuhao Zhang, Arun Kumar, Frank McQuillan, Nandish Jayaram, Nikhil Kak, Ekta Khanna, Orhan Kislal, and Domino Valdano\\
+VLDB 2021
+
+\textit{Cerebro: A Layered Data Platform for Scalable Deep Learning}\\
+Arun Kumar, Supun Nakandala, Yuhao Zhang, Side Li, Advitya Gemawat, and Kabir Nagrecha\\
+CIDR 2021
+
+\textit{Cerebro: A Data System for Optimized Deep Learning Model Selection}\\
+Supun Nakandala, Yuhao Zhang, and Arun Kumar\\
+VLDB 2020
+
+\textit{Panorama: A Data System for Unbounded Vocabulary Querying over Video}\\
+Yuhao Zhang and Arun Kumar\\
+VLDB 2020
+
+\textit{Cerebro: Efficient and Reproducible Model Selection on Deep Learning Systems}\\
+Supun Nakandala, Yuhao Zhang, and Arun Kumar\\
+ACM SIGMOD 2019 DEEM Workshop
+
+\textit{Three-generation neutrino oscillations in curved spacetime}\\
+Yuhao Zhang and Xueqian Li\\
+Nuclear Physics B, 2016
+
+\textit{Self-regular black holes quantized by means of an analogue to hydrogen atoms}\\
+Chang Liu, Yangang Miao, Yumei Wu, and Yuhao Zhang\\
+Advances in High Energy Physics, 2016
+
+\section{\sc Presentations}
+\textit{Distributed Deep Learning on Data Systems}\\
+VLDB 2021 \hfill {\bf August 2021}\\
+
+\textit{A Layered Data Platform for Scalable Deep Learning}\\
+UCSD Database Seminar \hfill {\bf October 2020}\\
+UCSD CNS Research Review \hfill {\bf October 2020}
+
+\vspace{-3mm}
+\textit{Resource-Efficient Deep Learning Model Selection on Apache Spark}\\
+Spark+AI Summit 2020 \hfill {\bf June 2020}\\
+UCSD Database Seminar \hfill {\bf May 2020}
+
+\vspace{-3mm}
+\textit{Cerebro: A Data System for Optimized Deep Learning Model Selection}\\
+VLDB 2020 \hfill {\bf September 2020}\\
+UCSD Database Seminar \hfill {\bf June 2020}
+
+\vspace{-3mm}
+\textit{Panorama: Unbounded Vocabulary Queries on Video}\\
+VLDB 2020 \hfill {\bf September 2020}\\
+UCSD Database Seminar \hfill {\bf June 2020}\\
+Poster presentation, UCSD CSE Research Open House \hfill {\bf January 2019}\\
+UCSD Database Seminar \hfill {\bf November 2019}\\
+Poster presentation, SoCal DB Day 2018 \hfill {\bf October 2018}
+
+\vspace{-3mm}
+\textit{Apache MADlib 1.17 Showcase}\\
+VMware and online \hfill {\bf September 2019}\\
+
+
+\section{\sc Misc}
+
+SIGMOD 2021 \textit{Students and Postdocs in DB Panel Discussion} \hfill {\bf June 2021}
+
+
+
+
+\section{\sc Technical Skills} 
+\begin{list2}
+\item Programming languages: Python, C/C++, Scala, Java, SQL, R
+\item Data platforms: Spark, Dask, PostgreSQL, Greenplum Database, Hadoop, Hive
+\item Machine learning frameworks: TensorFlow, PyTorch, Keras, xgBoost, LightGBM, Scikit-learn
+\item Other data analytics packages: Pandas, NumPy, Matplotlib, OpenCV, Scikit-image, Pillow/PIL
+\item Cloud/Cluster tools: AWS EC2/S3/EMR, Google Cloud, Azure, Kubernetes, Docker
+\item Miscs: MPI, MATLAB, Mathematica, CERN ROOT, CERN GEANT4\\ 
+\end{list2}
+
+
+
+\end{resume}
+\end{document}
+
+
+
