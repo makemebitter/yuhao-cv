@@ -50,6 +50,7 @@ La Jolla, CA 92093 USA & \\
 \vspace*{.05in}
 %\item Dissertation Topic: ``Hierarchical Models for Multiple Ratings
 % in Performance-Based\\ \hspace*{1.23in} Student Assessments.'' 
+\item Dissertation Topic: ``High-throughput Data Systems for Deep Learning Workloads"
 \item Advisor: Prof. Arun Kumar
 \end{list2}
 \end{list1}
@@ -65,28 +66,26 @@ La Jolla, CA 92093 USA & \\
 
 
 \section{\sc Research Interests}
-Machine learning systems, including systems powered by applied ML that enable novel applications, and systems designed for ML to make data science easier and faster
-
-\section{\sc Honors and Awards} 
-Best Thesis Award, School of Physics, Nankai University, 2016\\
-Wang Kechang Scholarship for Academic Distinction, 2014\\
-Gong-Neng Scholarship, 2013\\
-Poling Academy Scholarship, 2012-2016
+My research is primarily on machine learning systems, including systems powered by applied ML that enable novel applications and systems designed for ML to make data science easier and faster. Past and ongoing projects include systems for: distributed deep learning model selection and training, distributed in-database deep learning, distributed large-scale graph neural network training, and video analytics and querying.
 
 \section{\sc Projects}
-{\bf Distributed Deep Learning on Data Systems:}
+{\bf Distributed High-Throughput Graph Neural Network Training System (Lotan):}
+
+Currently work in progress, Lotan is a system designed for high-throughput, large-scale graph neural network (GNN) training. It aims to solve the scalability bottlenecks many current systems face through a novel fusion of graph processing systems and deep learning systems. It proposes many novel techniques, including a cost-based query optimizer, a graph partitioning scheme, and a share-memory-based IPC architecture to make such fusion possible and efficient. 
+
+{\bf Distributed Deep Learning on Data Systems (Cerebro-DS):}
 
 Deep learning (DL) is growing in popularity for many data analytics applications, including among enterprises. Large business-critical datasets in such settings typically reside in RDBMSs or other data systems. The DB community has long aimed to bring machine learning (ML) to DBMS-resident data. Given past lessons from in-DBMS ML and recent advances in scalable DL systems, DBMS and cloud vendors are increasingly interested in adding more DL support for DB-resident data. In this paper, we show that there is no single ``best'' approach to achieve that goal and an interesting tradeoff space of approaches exists. We explain four canonical approaches, compare them analytically on multiple criteria (e.g., runtime efficiency and ease of governance) and compare them empirically with large-scale DL workloads. Our experiments and analyses show that it is non-trivial to meet all practical desiderata well and there is a Pareto frontier; for instance, some approaches are 3x-6x faster but fare worse on governance and portability. Our results and insights can help DBMS and cloud vendors design better DL support for DB users.\\
+\textit{Project homepage: }\texttt{https://adalabucsd.github.io/cerebro.html}\\
 \textit{Open-sourced release: }\texttt{https://github.com/makemebitter/cerebro-ds}
 
-{\bf Cerebro:}
+{\bf Resource-efficient Distributed Deep Learning Model Selection and Training System (Cerebro):}
 
 Cerebro is a layered data platform for scalable deep learning. One of the biggest challenges for scalable deep learning is model selection, which is difficult and resource-heavy. This system provides high-level APIs for deep learning model selection and optimizes distributed deep learning training for model selection workloads. It adopts a new form of parallelism called Model Hopper Parallelism (MOP) and is the resource-optimal choice. It can expedite distributed deep learning training by 3x-10x compared to Horovod and TensorFlow Parameter Server. There are also subsequent works about bridging data systems (such as Apache Spark, Distributed databases, etc.) with distributed DL systems.\\
 \textit{Project homepage: }\texttt{https://adalabucsd.github.io/cerebro.html}\\
 \textit{Open-sourced release: }\texttt{https://adalabucsd.github.io/cerebro-system}
 
-\newpage
-{\bf Panorama:}
+{\bf Video Querying System under Unbounded Vocabulary Setting (Panorama):}
 
 Panorama is a video querying system for object detection and classification. It is designed to tackle the life-long learning or bounded vocabulary issues. Computer-vision-based video analytics systems often require \textit{update} of the vocabulary as new classes/labels need to be added from time-to-time. Such updates involve re-training of the deep learning model, which requires expertise and is very time-consuming. Panorama is built to partially avoid and automate this process while expediting inference speed at the same time.\\
 \textit{Project homepage: }\texttt{https://adalabucsd.github.io/panorama.html}\\
@@ -221,12 +220,19 @@ VMware and online \hfill {\bf September 2019}\\
 
 \textbf{External reviewer}: SIGMOD 2020, SIGMOD 2021, VLDB 2022
 
+\textbf{Reviewer}: JMLR MLOSS 2022
+
 
 \section{\sc Misc}
 
 SIGMOD 2021 \textit{Students and Postdocs in DB Panel Discussion} \hfill {\bf June 2021}
 
 
+\section{\sc Honors and Awards} 
+Best Thesis Award, School of Physics, Nankai University, 2016\\
+Wang Kechang Scholarship for Academic Distinction, 2014\\
+Gong-Neng Scholarship, 2013\\
+Poling Academy Scholarship, 2012-2016
 
 
 \section{\sc Technical Skills} 
