@@ -71,7 +71,7 @@ My research is primarily on machine learning systems and large-scale data analyt
 \section{\sc Projects}
 {\bf Distributed High-Throughput Graph Neural Network Training System (Lotan):}
 
-Currently work in progress, Lotan is a system designed for high-throughput, large-scale graph neural network (GNN) training. It aims to solve the scalability bottlenecks many current systems face through a novel fusion of graph processing systems and deep learning systems. It proposes many novel techniques, including a cost-based query optimizer, a graph partitioning scheme, model-batching for GNNs, and a share-memory-based IPC architecture to make such fusion possible and efficient. Test results showed that the system can outperform the state-of-art in terms of throughput, training accuracy, and scalability. The system is implemented on top of Apache Spark and PyTorch. 
+Recent advances in Graph Neural Networks (GNNs) have changed the landscape of modern graph analytics. The complexity of GNN training and the challenges of GNN scalability has also sparked interest from the system community, with efforts to build systems that provide higher efficiency, better memory management, and schemes to reduce costs. However, many of these systems reinvent the wheel by reiterating years of research and development on advanced graph data systems. Further, they often couple the scalability challenges of graph data processing with those of GNN training, resulting in entangled complex problems and systems that need help to handle either scalability challenge. Lotan is our highly scalable data system for full-batch GNN training with the separation of graph and neural network. Lotan provides separation of the graph and neural network computation, free individual scaling for each, and bridges existing graph data systems and deep learning frameworks. Lotan offers a series of technical innovations, including execution plan rewriting, highly-efficient data movement between systems, a GNN-centric graph partitioning method and the corresponding gradients backpropagation scheme, and GNN model batching. By taking several different workloads, we demonstrate the system's capability of training large GNN models that prior art fails to handle. Our system can surpass the state-of-art systems' training throughput by over 40x and can beat a naively implemented in-data-system GNN training framework by 76x. We believe our system can increase efficiency for existing workloads and open new possibilities for future GNN algorithmic research.
 
 {\bf Distributed Deep Learning on Data Systems (Cerebro-DS):}
 
@@ -155,8 +155,8 @@ Worked on the first in-DBMS deep learning system, allowing training and inferenc
 Worked on a theatre scheduling \& recommender system. Proposed new models and optimized the existing system.
 
 \section{\sc Publications}
-\textit{Lotan: a Highly Scalable In-data-system Graph Neural Network Training System}\\
-Yuhao Zhang, Arun Kumar\\
+\textit{Lotan: a highly scalable system for GNN training via the separation of graph and neural network}\\
+Yuhao Zhang and Arun Kumar\\
 Under submission
 
 
