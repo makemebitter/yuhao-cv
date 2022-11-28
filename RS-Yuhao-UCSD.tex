@@ -1,0 +1,148 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Title: SOP LaTeX Template
+%% Author: Soonho Kong / soonhok@cs.cmu.edu
+%% Created: 2012-11-12
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Requirement:
+%%     You need to have the `Adobe Caslon Pro` font family.
+%%     For more information, please visit:
+%%     http://store1.adobe.com/cfusion/store/html/index.cfm?store=OLS-US&event=displayFontPackage&code=1712
+%%
+%% How to Compile:
+%%     $ xelatex main.tex
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[letterpaper]{article}
+\usepackage[letterpaper,margin=1.in,noheadfoot]{geometry}
+\usepackage{fontspec, color, enumerate, sectsty}
+\usepackage[normalem]{ulem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                      YOUR INFORMATION
+%
+%      PLEASE EDIT THE FOLLOWING LINES ACCORDINGLY!!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\soptitle}{Research Statement}
+\newcommand{\yourname}{Yuhao Zhang}
+\newcommand{\youremail}{yuz870@eng.ucsd.edu}
+\setlength{\footskip}{30pt}
+
+%% FONTS SETUP
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont{Adobe Caslon Pro}
+\setmonofont[Path = /System/Library/Fonts/, Scale=1]{Monaco}
+\setsansfont[Scale=1]{Optima}
+\newcommand{\amper}{{\fontspec[Scale=1]{Adobe Caslon Pro}\selectfont\itshape\&~{}}}
+\usepackage[bookmarks, colorlinks, breaklinks,
+pdftitle={\yourname - \soptitle},pdfauthor={\yourname}, unicode]{hyperref}
+\hypersetup{linkcolor=magneta,citecolor=magenta,filecolor=magenta,urlcolor=[named]{WildStrawberry}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                      Title and Author Name
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{center}{\huge \scshape \soptitle}\end{center}
+\begin{center}\vspace{0.2em} {\Large \yourname\\}
+  {\youremail\\} {https://yhzhang.info}\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                      SOP Body
+% NOTE: Use \amper instead of \&
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section*{Introduction}
+\noindent Advancements in deep learning have brought workloads that put existing data analytics infrastructures and systems to the test. They ushered in an era of huge workloads that are increasingly computation- and data-intensive. Most run with severe inefficiency and face huge scalability challenges due to suboptimal scheduling, poor resource/memory management, or simply the lack of proper software system support. With the stagnated Moore's law, large-scale and distributed computation is almost inevitable, making all the system issues mentioned more complex. ML System research is born under this context as a cross-section of system and ML research, aiming to optimize and scale up ML workloads.
+
+\paragraph{My research approach.} The very core of ML system research is still system research. The various efficiency, cost, and scalability challenges are often the re-discovering of or largely resembles years-old OS, compiler, scheduling, and data system problems. What sets ML workloads aside is usually the vast amount of dense data, huge computational costs, and heavy communications. The main challenge is, thus, often about something other than imagining brand new technologies out of thin air, but rather about correctly identifying the challenges and bottlenecks of ML workloads, then repurposing and innovating upon well-established system techniques. The core mission is: given the rather finite set of techniques, how do we synergize and innovate upon them to accommodate the ever-changing and seemly infinite variations of ML/AI workloads? 
+
+\paragraph{My research goal and impact.} My primary research goal is to provide software system support for very diversified ML workloads to make data science faster and easier. In my past research and ongoing research, I captured the core challenges of various ML workloads on different data modalities, ranging from: model selection and training workloads on i.i.d. (tabular and images) data, both on data lake data~\cite{cerebro} and data within data management systems~\cite{cerebro-ds}; Unbounded vocabulary querying workloads on video and image data~\cite{panorama}; And Graph Neural Network model selection and training workloads on graph data~\cite{lotan}. I proposed novel techniques and built systems to boost the throughput and increase scalability. All of my previous work is released open-sourcedly. My past research of Cerebro~\cite{cerebro} and Cerebro-DS~\cite{cerebro-ds} have been incorporated into the Apache MADlib open-source project and offered in Greenplum Database by VMware. Databricks are also reviewing the same project to offer to their customers. Graph DBMS vendor is also interested in my work of Lotan~\cite{lotan}.
+
+
+
+%
+%
+%MLSys researchers need to deeply understand the. Instead of focusing on one particular ML model, one should build system and develop techniques for the fundamental challenges. 
+%
+%and can be solved with the same arsenal of techniques such as better scheduling, execution plan optimization, novel parallelism, and communication reduction. 
+%
+%
+%identifying the ML workloads' data access, computation, and communication patterns. 
+%Many scalability challenges are in fact data challenges, efficiency problems can be solved via optimized scheduling, communication reduction, 
+%
+%Data/model partitioning, distributed processing, and 
+%
+%Therefore ML system research is 
+%
+%
+%New model architectures are being proposed at a staggering speed and any system designed for specific models risk being rendered obsolete in just a few years. It is therefore vital for MLSys researchers to focus on the fundamental system challenges and optimize for the common computation and data access pattern, instead of individual models. 
+%
+%
+%
+%To either enable novel applications and model designs, or make existing workloads
+\section*{Past Research}
+
+%I worked on various data modalities and workloads, ranging from database-resident tabular data, to videos, images, and to large-scale graph data. designed and built systems to increase scalability and boost throughput. The common theme is my data-centric views on solving many of the efficiency and scalability challenges, I always try to draw connections between ML  Apart from developing novel techniques, I also assimilate and repurpose a lot from the data management literature. I believe it is vital to realize that many of the ML challenges resembles similar data system challenges and can be solved with the same set of techniques.
+
+\paragraph{Distributed system for model selection workloads on i.i.d. (tabular and images) data.} There is a major bottleneck to the wider adoption of deep learning: the pain and resource intensiveness of model selection. It is an empirical process this involves exploring deep net architectures and hyper-parameters, often requiring hundreds of trials. However, most ML systems focus on training one model at a time, reducing throughput and raising overall resource costs; some also sacrifice reproducibility. Towards higher throughput and resource utilization and as a part of a grander vision~\cite{cerebrocidr} of deep learning model selection system, I built Cerebro~\cite{cerebro} with my advisor and college. Cerebro is a data system to raise deep net model selection throughput at scale without raising resource costs or sacrificing reproducibility or accuracy. Cerebro uses a new parallel deep learning training strategy called model hopper parallelism. It hybridizes task- and data-parallelism to mitigate the cons of these prior paradigms and offer the best of both worlds. Experiments on large ML benchmark datasets showed that Cerebro offers 3x to 10x runtime savings relative to data-parallel systems like Horovod and Parameter Server and up to 8x memory/storage savings or up to 100x network savings relative to task-parallel systems. Cerebro also supports heterogeneous resources and fault tolerance.
+
+
+\paragraph{Bringing deep learning to data system-resident data.}
+%The DB community has long aimed to bring ML to DBMS-resident data. Given past lessons from in-DBMS
+%ML and recent advances in scalable DL systems, DBMS and cloud
+%vendors are increasingly interested in adding more DL support
+%for DB-resident data.
+Deep learning's popularity is not only limited to ML researchers; many enterprises and businesses are also considering adopting deep learning for their data analytics applications. Large business-critical
+datasets in such settings typically reside in RDBMSs or other data
+systems.  In the work of Cerebro above, I explored the landscape of standalone deep learning model selection systems and proposed a new parallelism. However, it was unclear if the parallelism and scheduling could be incorporated into existing infraustuctures of data management systems. In the project of Cerebro-DS~\cite{cerebro-ds}, I characterized the particular suitability of Cerebro on data systems. However, to bring the novel model hopper parallelism to DB resident data, I showed that there was no single ``best" approach, and
+an exciting tradeoff space of approaches exists. I explained four
+canonical approaches, built prototypes upon Greenplum Database, and compared them analytically on multiple criteria (e.g., runtime
+efficiency and ease of governance) with large-scale DL workloads. The experiments and analyses showed
+that it was non-trivial to meet all practical desiderata well, and there was
+a Pareto frontier; for instance, some approaches are 3x-6x faster but
+fare worse on governance and portability. These results and insights
+can help DBMS and cloud vendors design better DL support for DB
+users.
+
+\paragraph{System for Graph Neural Network model selection and training workloads on graph data.}
+Moving on from the common i.i.d. data and models designed for them, I looked at the rapidly developing Graph Neural Networks on graph data. The complexity of GNN training and the challenges of scalability has also sparked interest from the ML system community, with efforts to build systems that provide higher efficiency, better memory management, and schemes to reduce costs. However, many of these systems reinvent the wheel by reiterating years of research and development on advanced graph data systems. Further, they often couple the scalability challenges of graph data processing with those of GNN training, resulting in entangled complex problems and systems that need help to handle either scalability challenge. Lotan~\cite{lotan} is a highly scalable data system for full-batch GNN training with the separation of graph and neural network. Lotan provides separation of the graph and neural network computation, free individual scaling for each, and bridges existing graph data systems and deep learning frameworks. Lotan offers a series of technical innovations, including execution plan rewriting, highly-efficient data movement between systems, a GNN-centric graph partitioning method and the corresponding gradients backpropagation scheme, and GNN model batching. By taking several different GNN workloads, I demonstrated the system's capability of training large GNN models that prior art fails to handle. The system can surpass the state-of-art systems' training throughput by over 40x and can beat a naively implemented in-data-system GNN training framework by 76x. I believe the system can increase efficiency for existing workloads and open new possibilities for future GNN algorithmic research.
+
+
+
+\paragraph{System for unbounded vocabulary querying workloads on video and image data} Video data is sometimes dubbed as ``fast data"", characterized by their sheer volume and the requirement of real-time responses for many applications such as video monitoring. Using deep learning methods for these applications incurs high computational costs and inference latency. The prior art has studied how to improve system efficiency. Nevertheless, they largely focus on small ``closed world" prediction vocabularies, even though many surveillance security and traffic analytics applications have an ever-growing set of target entities. I call this the ``unbounded vocabulary" issue, which is a key bottleneck for emerging video monitoring applications. I presented the first data system for tacking this
+the issue for video querying, Panorama~\cite{panorama}. The design philosophy
+is to build a unified and domain-agnostic system that lets
+application users generalize to unbounded vocabularies in an
+out-of-the-box manner without tedious manual re-training.
+To this end, I synthesized and innovated upon an array of
+techniques from the ML, vision, databases, and multimedia systems literature to devise a new system architecture.
+I also presented techniques to ensure Panorama had high
+inference efficiency. Experiments with multiple real-world
+datasets showed that Panorama could achieve between 2x to 20x
+higher efficiency than baseline approaches on in-vocabulary
+queries while still yielding comparable accuracy and also
+generalizing well to unbounded vocabularies.
+
+\section*{Future Research}
+ML System research is a relatively new domain, and vast opportunities exist. ML-based apps will be ubiquitous eventually, and there are destined to be new challenges. It is still the right time to do ML system research. We are at the transition point from segmented and often ad-hoc solutions to fully-fledged systems that will form the backbones of the next wave of technological innovation. I choose to conduct future research aligned with my current experiences and remain at the frontline during this postdoc.
+
+\paragraph{From homogenous to heterogenous ML systems.} As ML/AI research grows in complexity. Because the world is heterogeneous and multimodal, highly heterogenous environments will only become more common, where distinct ML model architectures, multiple data storage, diversified data modalities, and various computational resources are all involved. Such complexities must be abstracted away from the user for easy adoption. I imagine a poly-ML system like the polystore systems in data system research. There are many system problems to expect: first, logical plan optimization of multiple correlated workloads. Second, scheduling and coordination of heterogenous computational graph operators. Third, resource management of heterogenous physical clusters. Can we build a platform to facilitate multimodal ML research? Can we develop a set of abstractions and logical operators to express most multimodal machine learning research? Can we allow the user to easily manipulate the data and experiment with their models without worrying about the underlying heterogeneous computational parallelism, data storage, and physical resources? 
+
+\paragraph{From ML frameworks to distributed ML data systems.} The future of computation is distributed, as the performance of a single machine is physically limited, while distributed processing has much more room to scale. However, today's practitioners still predominantly use a single machine, although they are offered data-, model-, and other more advanced parallelisms. The adoption of these parallel techniques is not ideal, despite the huge amount of effort made. One of the major culprits behind the under-utilization of distributed processing is the systems' common lack of support for distributed storage, querying, and data computation. A common pattern is the ML system trying to parallelize and rewrite the users' single-node script. Instead of writing a single-node ML program with single-node operators and then trying to compile and distributedly execute it, can we offer distributed counterparts of the ML operators directly to the user? In the world of SQL and MapReduce, the users do not write a script and execute it on every machine; they code directly in a declarative way so that their program is readily parallelized. Instead of throwing large deep learning matrix operations to a single GPU and failing when there are memory limitations, can we naturally chunk all of the matrices and distribute them across the cluster, and gracefully swap GPU memory to DRAM and potentially to disk like data systems do? 
+
+\paragraph{From optimizing costs to enabling innovations.}So far, ML system research has been primarily developed in parallel with ML algorithm research. The trend is shifting to some extent, but in general, it was the system researchers trying to catch up with the latest innovations from the ML community and building systems for their emerging use cases. This pattern usually results in a lag behind the frontline of ML research. Consequently, most ML system research is only designed to optimize costs and provide better usability for existing models and workloads. However, in an era of fast-paced innovations, it is hard to predict what comes next, and the present challenges may be rendered trivial by the next generation of models and workloads. To get ahead of this curve, I aspire to build truly future-proof systems that can not only ``democratize ML" by optimizing the costs but also has the potential to enable impossible workloads and model architectures and stimulate ML algorithmic innovations. I look forward to collaborating with ML researchers and enabling model architectures that were not possible with limited computational resources.
+On the other hand, there are opportunities to design ML system-aware models. Can we build model architectures designed so that their data dependencies, data access, and communication patterns are easy to parallelize and well-optimized by the underlying system? The model can even assume data locality, cache, and sparsity. Can we abstract and summarize a set of principles about scalable model architecture design? Can we build model architecture search systems that, besides accuracy, also optimize for runtime efficiency and scalability?
+
+
+
+
+
+
+
+
+\bibliographystyle{abbrv}
+\bibliography{main}
+
+\end{document}
