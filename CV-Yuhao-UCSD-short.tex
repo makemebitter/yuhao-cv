@@ -1,0 +1,203 @@
+\documentclass[margin,line]{res}
+\usepackage[all]{nowidow}
+
+
+
+\oddsidemargin -.5in
+\evensidemargin -.5in
+\textwidth=6.0in
+\itemsep=0in
+\parsep=0in
+% if using pdflatex:
+%\setlength{\pdfpagewidth}{\paperwidth}
+%\setlength{\pdfpageheight}{\paperheight} 
+
+\newenvironment{list1}{
+ \begin{list}{\ding{113}}{%
+   \setlength{\itemsep}{0in}
+   \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+   \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
+   \setlength{\leftmargin}{0.17in}}}{\end{list}}
+\newenvironment{list2}{
+ \begin{list}{$\bullet$}{%
+   \setlength{\itemsep}{0in}
+   \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+   \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
+   \setlength{\leftmargin}{0.2in}}}{\end{list}}
+
+
+\begin{document}\sloppy
+
+\name{Yuhao Zhang \vspace*{.1in}}
+
+\begin{resume}
+\section{\sc Contact Information}
+\vspace{.05in}
+\begin{tabular}{@{}p{2in}p{4in}}
+EBU3B 3230       &  \\       
+CSE Department  & {\it E-mail:} yuz870@eng.ucsd.edu\\
+UC San Diego & {\it Website:} https://yhzhang.info/ \\    
+La Jolla, CA 92093 USA & \\   
+\end{tabular}
+
+\section{\sc Full CV}
+https://github.com/makemebitter/yuhao-cv/raw/master/CV-Yuhao-UCSD.pdf
+
+\section{\sc Education}
+{\bf University of California, San Diego}, La Jolla, California USA\\
+%{\em Department of Statistics} 
+\vspace*{-.1in}
+\begin{list1}
+\item[] Ph.D. Student, Computer Science, September 2017 - Spring 2023
+\begin{list2}
+\vspace*{.05in}
+%\item Dissertation Topic: ``Hierarchical Models for Multiple Ratings
+% in Performance-Based\\ \hspace*{1.23in} Student Assessments.'' 
+\item Dissertation Topic: ``High-throughput Data Systems for Deep Learning Workloads"
+\item Advisor: Prof. Arun Kumar
+\end{list2}
+\end{list1}
+
+{\bf Nankai University}, Tianjin, China\\
+\vspace*{-.1in}
+\begin{list1}
+\item[] B.S., Theoretical Physics, June 2016
+\begin{list2}
+\item Advisor: Prof. Xueqian Li and Prof. Yangang Miao
+\end{list2}
+\end{list1}
+
+
+\section{\sc Research Interests and Impact}
+My research is primarily on machine learning systems and large-scale data analytics systems, including systems powered by applied ML that enable novel applications and systems designed for ML to make data science easier and faster. Past and ongoing projects include systems for: distributed deep learning model selection and training, distributed in-database deep learning, distributed large-scale graph neural network training, and video analytics and querying. All of my previous work is released as open source software. My past research on Cerebro and Cerebro-DS have been incorporated into the Apache MADlib open-source project and offered in Greenplum Database by VMware. The same projects have also been integrated with Spark and Databricks is also reviewing the same project to offer to their customers. A prominent graph DBMS vendor is also interested in my work of Lotan.
+%
+%\section{\sc Projects}
+%{\bf Lotan: Bridging the Gap between GNNs and Scalable Graph Analytics Engines:}
+%
+%Recent advances in Graph Neural Networks (GNNs) have changed the landscape of modern graph analytics. The complexity of GNN training and challenges of GNN scalability has also sparked interest from the systems community, with efforts to build systems that provide higher efficiency and schemes to reduce costs. However, we observe that many such systems basically "reinvent the wheel" of much work done in the database world on scalable graph analytics engines. Further, they often tightly couple the scalability treatments of graph data processing with that of GNN training, resulting in entangled complex problems and systems that  often do not scale well on one of those axes.
+%
+%In this paper, we ask a fundamental question: How far can we push existing systems for scalable graph analytics and deep learning (DL) instead of building custom GNN systems? Are compromises inevitable on scalability and/or runtimes? We propose Lotan, the first scalable and optimized data system for full-batch GNN training with \textit{decoupled scaling} that bridges the hitherto siloed worlds of graph analytics systems and DL systems. Lotan offers a series of technical innovations, including re-imagining GNN training as query plan-like dataflows, execution plan rewriting, optimized data movement between systems, a GNN-centric graph partitioning scheme, and the first known GNN model batching scheme. We prototyped Lotan on top of GraphX and PyTorch. An empirical evaluation using several real-world benchmark GNN workloads reveals a promising nuanced picture: Lotan significantly surpasses the scalability of state-of-the-art custom GNN systems, while often matching or being only slightly behind on time-to-accuracy metrics in some cases. We also show the impact of our system optimizations. Overall, our work shows that the GNN world can indeed benefit from building on top of scalable graph analytics engines. Lotan's new level of scalability can also empower new ML-oriented research on ever-larger graphs and GNNs.
+%
+%{\bf Distributed Deep Learning on Data Systems (Cerebro-DS):}
+%
+%Deep learning (DL) is growing in popularity for many data analytics applications, including among enterprises. Large business-critical datasets in such settings typically reside in RDBMSs or other data systems. The DB community has long aimed to bring machine learning (ML) to DBMS-resident data. Given past lessons from in-DBMS ML and recent advances in scalable DL systems, DBMS and cloud vendors are increasingly interested in adding more DL support for DB-resident data. In this paper, we show that there is no single ``best'' approach to achieve that goal and an interesting tradeoff space of approaches exists. We explain four canonical approaches, compare them analytically on multiple criteria (e.g., runtime efficiency and ease of governance) and compare them empirically with large-scale DL workloads. Our experiments and analyses show that it is non-trivial to meet all practical desiderata well and there is a Pareto frontier; for instance, some approaches are 3x-6x faster but fare worse on governance and portability. Our results and insights can help DBMS and cloud vendors design better DL support for DB users. The system is based on top of Postgres, Apache Spark, TensorFlow, and PyTorch. \\
+%\textit{Project homepage: }\texttt{https://adalabucsd.github.io/cerebro.html}\\
+%\textit{Open-sourced release: }\texttt{https://github.com/makemebitter/cerebro-ds}
+%
+%{\bf Resource-efficient Distributed Deep Learning Model Selection and Training System (Cerebro):}
+%
+%Cerebro is a layered data platform for scalable deep learning. One of the biggest challenges for scalable deep learning is model selection, which is difficult and resource-heavy. This system provides high-level APIs for deep learning model selection and optimizes distributed deep learning training for model selection workloads. It adopts a new form of parallelism called Model Hopper Parallelism (MOP) and is the resource-optimal choice. It can expedite distributed deep learning training by 3x-10x compared to Horovod and TensorFlow Parameter Server. There are also subsequent works about bridging data systems (such as Apache Spark, Distributed databases, etc.) with distributed DL systems.\\
+%\textit{Project homepage: }\texttt{https://adalabucsd.github.io/cerebro.html}\\
+%\textit{Open-sourced release: }\texttt{https://adalabucsd.github.io/cerebro-system}
+%
+%{\bf Video Querying System under Unbounded Vocabulary Setting (Panorama):}
+%
+%Panorama is a video querying system for object detection and classification. It is designed to tackle the life-long learning or bounded vocabulary issues. Computer-vision-based video analytics systems often require \textit{update} of the vocabulary as new classes/labels need to be added from time-to-time. Such updates involve re-training of the deep learning model, which requires expertise and is very time-consuming. Panorama is built to partially avoid and automate this process while expediting inference speed at the same time.\\
+%\textit{Project homepage: }\texttt{https://adalabucsd.github.io/panorama.html}\\
+%\textit{Open-sourced release: }\texttt{https://github.com/makemebitter/Panorama-UCSD}
+
+%\section{\sc Research Impact}
+%Cerebro and MOP integrated into Greenplum Database and shipped by VMware \hfill 2019\\
+%Code of Cerebro integrated into Apache MADlib project \hfill 2019\\
+
+\section{\sc Academic Experience}
+{\bf University of California, San Diego}, La Jolla, California USA
+
+\vspace{-.3cm}
+{\em PhD Student} \hfill {\bf Sept 2017 - present}\\
+Ph.D.~research, Ph.D.~and Masters level coursework and
+research/consulting projects.\\
+Courses taken: Machine Learning, Deep Learning, Data Mining \& Analytics, Advanced Data Analytics, Computer Vision, Database Systems, Advanced Algorithms, Advanced Compilers, Principles of Programming Languages, Introduction to Robotics
+
+{\em Collaborator for project DeepPostures: a deep learning library for identifying human postures from wearable devices data} \hfill {\bf Spring 2022 - Spring 2023}\\
+Built and maintained project website (https://adalabucsd.github.io/DeepPostures/). Wrote documentation and made demos about the project. Provided software engineering support for other public health researchers. Conducted tests and data analysis for the project and ran preliminary experiments for grant applications.
+
+{\em Teaching Assistant for CSE234: Data Systems for Machine Learning} \hfill {\bf Winter 2021 \& Winter 2023}\\
+Helped designing and supervising a research-oriented course on machine learning systems. Mentored 12 master students with their course projects ranging from advanced implementation of cutting-edge research, to evaluation and surveying the state-of-art work, and to open-ended research. Did stand-in lectures.
+
+%\vspace{-.1cm}
+{\em Teaching Assistant for DSC102: Systems for Scalable Analytics} \hfill {\bf Winter 2020}\\
+Developed the first edition of course assignments and auto-grading programs with Python and Bash. The assignments involve Python Dask, Spark, AWS EC2/S3/EBS, and Kubernetes. These assignments have been adopted by the course ever since and used by 500+ students.
+
+
+
+{\bf Texas A\&M University}, College Station, Texas USA
+
+\vspace{-.3cm}
+{\em Research Intern} \hfill {\bf Summer 2015}\\
+Worked on vision-based object tracking, modeling, and data analytics.
+%\vspace{-.1cm}
+
+{\bf Institute of Physics, Chinese Academy of Sciences}, Beijing, China
+
+\vspace{-.3cm}
+{\em Research Intern} \hfill {\bf Summer 2014}\\
+Theoretical physics research. Particle physics.
+
+{\bf Nankai University}, Tianjin, China
+
+\vspace{-.3cm}
+{\em Research Assistant} \hfill {\bf 2013 - 2016}\\
+Theoretical physics research. Black holes, gravity, and neutrinos. Resulted in two published papers.
+
+\section{\sc Professional Experience}
+{\bf Microsoft Gray System Lab}, California USA
+
+\vspace{-.3cm}
+{\em Research Intern} \hfill {\bf Summer 2021}\\
+Worked on machine learning system research, focusing on factorized in-DBMS machine learning. Built a highly scalable system on top of Apache Spark that can outperform its MLlib by orders of magnitude. 
+
+{\bf VMware}, Palo Alto, California USA
+
+\vspace{-.3cm}
+{\em Software Engineer Intern} \hfill {\bf Summer 2019}\\
+Worked on the first in-DBMS deep learning system, allowing training and inference of deep learning models with TensorFlow on database-resident data. Integrated my research project, Cerebro, into the deep learning training infrastructure of Greenplum Database, boosting efficiency by over 10x. Contributed to the Apache MADlib project in Python and SQL. Lead the development of a major release. This project has been incorporated into Greenplum and production-ready for VMware's customers.
+
+{\bf Opera Solutions}, San Diego, California USA
+
+\vspace{-.3cm}
+{\em Data Scientist Intern} \hfill {\bf Summer 2018}\\
+Worked on a theatre scheduling \& recommender system. Proposed new models and optimized the existing system.
+
+\section{\sc Publications}
+See Full CV.
+
+
+\section{\sc Presentations}
+See Full CV.
+\section{\sc Service}
+
+\textbf{External reviewer}: SIGMOD 2020, SIGMOD 2021, VLDB 2022
+
+\textbf{Reviewer}: JMLR MLOSS 2022, SIGMOD 2024
+
+
+\section{\sc Misc}
+
+SIGMOD 2021 \textit{Students and Postdocs in DB Panel Discussion} \hfill {\bf June 2021}
+
+
+\section{\sc Honors and Awards} 
+Best Thesis Award, School of Physics, Nankai University, 2016\\
+Wang Kechang Scholarship for Academic Distinction, 2014\\
+Gong-Neng Scholarship, 2013\\
+Poling Academy Scholarship, 2012-2016
+
+
+%\section{\sc Technical Skills} 
+%\begin{list2}
+%\item Programming languages: Python, C/C++, Scala, Java, SQL, R
+%\item Data platforms: Spark, Dask, PostgreSQL, Greenplum Database, Hadoop, Hive
+%\item Machine learning frameworks: TensorFlow, PyTorch, Keras, xgBoost, LightGBM, Scikit-learn
+%\item Other data analytics packages: Pandas, NumPy, Matplotlib, OpenCV, Scikit-image, Pillow/PIL
+%\item Cloud/Cluster tools: AWS EC2/S3/EMR, Google Cloud, Azure, Kubernetes, Docker
+%\item Miscs: MPI, MATLAB, Mathematica, CERN ROOT, CERN GEANT4\\ 
+%\end{list2}
+
+
+
+\end{resume}
+\end{document}
+
+
+
