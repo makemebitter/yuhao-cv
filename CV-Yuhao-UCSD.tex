@@ -43,7 +43,14 @@
 
 \vspace{-.3cm}
 {\em Software Engineer} \hfill {\bf December 2023 - present}\\
-Currently, I drive key research initiatives on applied AI/ML for systems in Databricks, applying state-of-the-art machine learning techniques to advance and optimize Databricks' data platform. My role involves developing, prototyping, and deploying innovative solutions in areas such as system scheduling and workload management, directly benefiting the performance and intelligence of Databricks products, and advancing industry standards for data-driven technologies.
+\begin{list2}
+\item ML $\times$ Systems focus.
+\item Co-own DBSQL workload management system: design and operate scheduling for DBSQL queries.
+\item Sole owner of ML-based predictive costing for all DBSQL queries; convert runtime/cost priors into smarter scheduling, bin-packing, and autoscaling policies.
+\item Lead LLM-enhanced auto-evolution of system policies: agent + simulator to propose/tune algorithms and knobs.
+\item Lead foundation-model over systems logs: train an internal model to understand and “speak” system logs for predictive resource management.
+\item Co-own and built v1 of QuickPredict, an internal distributed prediction-serving platform returning history-driven cost/latency priors and workload statistics to internal consumers.
+\end{list2}
 
 {\bf Microsoft Gray System Lab}, California USA
 
@@ -89,8 +96,10 @@ Worked on a scheduling and recommendation system, proposing new models and optim
 \end{list1}
 
 
-\section{\sc Research Interests and Impact}
-My research centers on advancing ML systems and large-scale data analytics, focusing on both applied ML systems that power novel applications and ML-optimized systems that streamline data science workflows for efficiency and scalability. My past and ongoing projects span large-scale distributed AutoML, distributed in-database deep learning, scalable graph neural network training, and advanced video analytics and querying systems. All previous work has been released as open-source software. My research on Cerebro and Cerebro-DS has been incorporated into the Apache MADlib open-source project and integrated into VMware’s Greenplum Database, directly enhancing its capabilities for enterprise customers and enabling public health researchers at UCSD to train ML/AI models for understanding and preventing kidney and digestive diseases. Additionally, these projects are available as third-party tools for Databricks users, broadening access and impact across data science teams. My work has also inspired the creation of RapidFire AI, an AI startup that recently raised \$4M in seed funding based on my research contributions. Furthermore, my work on Lotan, a system for large-scale GNN training, has garnered interest from a prominent graph DBMS vendor, underscoring its relevance and impact within the industry.
+\section{\sc Research Summary}
+
+My research centers on ML systems and large-scale data analytics, spanning ML-powered systems and infrastructure that accelerates ML at scale. During my PhD I built Panorama, a unified system for high-throughput video inference that supports open-vocabulary recognition via a cascaded multi-task CNN and embedding retrieval; co-designed Model Hopper Parallelism (Cerebro), a novel execution mode for distributed model selection that raises trial throughput while minimizing communication and storage; built Lotan for large-scale GNN training by decoupling graph operations from neural compute with effective partitioning and batching; and led the first in-database distributed deep-learning system, training directly over DBMS-resident data with governance intact. All artifacts were released as open source. Cerebro and Cerebro-DS have been incorporated into Apache MADlib and integrated with VMware Greenplum, enabling external teams (e.g., UCSD public-health researchers) to train ML/AI models at scale; these projects are also available as third-party tools for Databricks users. This line of work inspired the RapidFire AI startup, underscoring the practical impact of the research.
+
 
 \section{\sc Projects}
 {\bf Lotan: Bridging the Gap between GNNs and Scalable Graph Analytics Engines:}
@@ -129,8 +138,8 @@ Panorama is a video querying system for object detection and classification. It 
 
 \vspace{-.3cm}
 {\em PhD Student} \hfill {\bf 2017 - 2023}\\
-Includes current Ph.D.~research, Ph.D. level coursework, and
-research/consulting projects.\\
+Includes Ph.D.~research, Ph.D. level coursework, and
+consulting projects.\\
 Courses taken: Machine Learning, Deep Learning, Data Mining \& Analytics, Advanced Data Analytics, Computer Vision, Database Systems, Advanced Algorithms, Advanced Compilers, Principles of Programming Languages, Advanced Operating Systems, Computer Architecture, Introduction to Robotics
 
 {\em Collaborator on DeepPostures: a deep learning library for identifying human postures from wearable device data} \hfill {\bf 2022 - 2023}\\
@@ -251,7 +260,7 @@ VMware and online \hfill {\bf September 2019}\\
 
 \textbf{External reviewer}: SIGMOD 2020, SIGMOD 2021, VLDB 2022
 
-\textbf{Reviewer}: JMLR MLOSS 2022, SIGMOD 2024, VLDB 2024, VLDB Journal 2024, TKDE 2024, ACM IKDD CODS-COMAD 2024, ICDE 2026
+\textbf{Reviewer}: JMLR MLOSS 2022, SIGMOD 2024, VLDB 2024, VLDB Journal 2024, TKDE 2024, ACM IKDD CODS-COMAD 2024, ICDE 2026, TKDE 2026
 
 
 \section{\sc Misc}
